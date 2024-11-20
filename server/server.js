@@ -3,10 +3,10 @@ const app = express();
 app.use(express.json());
 require('dotenv').config();
 const dbConfig = require('./config/dbConfig')
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 4000;
 
-const userRoute = require('./routes/userRoutes');
+const usersRoute = require('./routes/usersRoutes');
 
-app.use('./user', userRoute);
+app.use('/api/users', usersRoute);
 
 app.listen(port, ()=> console.log(`Node/Express server started on' ${port}`));
